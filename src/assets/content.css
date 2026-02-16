@@ -1,0 +1,4 @@
+/* Neovimari content styles
+ * Note: Hint and search UI styles are injected via Shadow DOM
+ * to isolate them from page styles. This file is for any
+ * non-Shadow DOM styles needed. */

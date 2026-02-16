@@ -1,0 +1,83 @@
+```
+                          _                      _
+ _ __   ___  _____   __ (_)_ __ ___   __ _ _ __(_)
+| '_ \ / _ \/ _ \ \ / / | | '_ ` _ \ / _` | '__| |
+| | | |  __/ (_) \ V /  | | | | | | | (_| | |  | |
+|_| |_|\___|\___/ \_/   |_|_| |_| |_|\__,_|_|  |_|
+```
+
+**Vim-style keyboard navigation for Safari.**
+
+A Safari Web Extension that brings Vim keybindings to your browser — scroll, navigate, manage tabs, search, and follow links, all from the keyboard.
+
+## Keybindings
+
+| Key | Action |
+|-----|--------|
+| `h` `j` `k` `l` | Scroll left / down / up / right |
+| `d` / `u` | Half-page down / up |
+| `gg` / `G` | Top / bottom of page |
+| `f` / `F` | Link hints (current tab / new tab) |
+| `/` | Search page |
+| `n` / `N` | Next / previous search match |
+| `H` / `L` | History back / forward |
+| `J` / `K` | Previous / next tab |
+| `r` | Reload page |
+| `x` / `X` | Close tab / restore closed tab |
+| `t` / `T` | New tab / duplicate tab |
+| `i` | Enter insert mode (pass keys to page) |
+| `Escape` | Return to normal mode |
+
+## Setup
+
+### Prerequisites
+
+- Node.js 20+
+- Xcode 15+
+- Safari 17+ with developer mode enabled
+
+### Build
+
+```bash
+npm install
+npm run build
+```
+
+### Run in Safari
+
+1. Open `xcode/Neovimari/Neovimari.xcodeproj` in Xcode
+2. Create `xcode/Neovimari/Local.xcconfig` with your team ID:
+   ```
+   DEVELOPMENT_TEAM = YOUR_TEAM_ID
+   ```
+3. Build & Run (Cmd+R)
+4. In Safari → Settings → Extensions → enable Neovimari
+5. Allow permissions when prompted
+
+> **Note:** Enable **Safari → Settings → Developer → Allow unsigned extensions** (resets each Safari launch).
+
+### Development
+
+```bash
+npm run dev       # Watch mode (rebuilds on change)
+npm run check     # TypeScript type check
+npm run test      # Run tests
+npm run lint      # ESLint
+```
+
+After rebuilding, hit Cmd+R in Xcode and reload the page in Safari.
+
+## Architecture
+
+- **Content script** — injected into every page; captures keyboard input, manages modal state, renders link hints and search UI via Shadow DOM
+- **Background service worker** — handles tab management and persists settings via `browser.storage.local`
+- **Swift companion app** — minimal macOS wrapper required by Apple to host the Safari Web Extension
+
+## Inspired by
+
+- [Vimari](https://github.com/televator-apps/vimari) — the original Vim keybindings for Safari
+- [Vimium](https://github.com/philc/vimium) — Vim keybindings for Chrome
+
+## License
+
+[MIT](LICENSE)

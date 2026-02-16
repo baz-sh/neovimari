@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC0000000000000000000001 /* NeovimariApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000001 /* NeovimariApp.swift */; };
+		CC0000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000002 /* ContentView.swift */; };
+		CC0000000000000000000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000003 /* Assets.xcassets */; };
+		CC0000000000000000000004 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000005 /* SafariWebExtensionHandler.swift */; };
+		CC0000000000000000000005 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB000000000000000000000A /* SafariServices.framework */; };
+		CC0000000000000000000006 /* Neovimari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000009 /* Neovimari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CC0000000000000000000007 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB000000000000000000000A /* SafariServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB0000000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE0000000000000000000002;
+			remoteInfo = "Neovimari Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD0000000000000000000004 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CC0000000000000000000006 /* Neovimari Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BB0000000000000000000001 /* NeovimariApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeovimariApp.swift; sourceTree = "<group>"; };
+		BB0000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB0000000000000000000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB0000000000000000000004 /* Neovimari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neovimari.entitlements; sourceTree = "<group>"; };
+		BB0000000000000000000005 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		BB0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB0000000000000000000007 /* Neovimari Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Neovimari Extension.entitlements"; sourceTree = "<group>"; };
+		BB0000000000000000000008 /* Neovimari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neovimari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0000000000000000000009 /* Neovimari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Neovimari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB000000000000000000000A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		BB000000000000000000000B /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD0000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0000000000000000000007 /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0000000000000000000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0000000000000000000005 /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA0000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				BB000000000000000000000B /* Local.xcconfig */,
+				AA0000000000000000000003 /* Neovimari */,
+				AA0000000000000000000004 /* Neovimari Extension */,
+				AA0000000000000000000005 /* Products */,
+				AA0000000000000000000006 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000003 /* Neovimari */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000000000000000000001 /* NeovimariApp.swift */,
+				BB0000000000000000000002 /* ContentView.swift */,
+				BB0000000000000000000003 /* Assets.xcassets */,
+				BB0000000000000000000004 /* Neovimari.entitlements */,
+			);
+			path = Neovimari;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000004 /* Neovimari Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000000000000000000005 /* SafariWebExtensionHandler.swift */,
+				BB0000000000000000000006 /* Info.plist */,
+				BB0000000000000000000007 /* Neovimari Extension.entitlements */,
+			);
+			path = "Neovimari Extension";
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000000000000000000008 /* Neovimari.app */,
+				BB0000000000000000000009 /* Neovimari Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA0000000000000000000006 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB000000000000000000000A /* SafariServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE0000000000000000000001 /* Neovimari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0000000000000000000008 /* Build configuration list for PBXNativeTarget "Neovimari" */;
+			buildPhases = (
+				DD0000000000000000000001 /* Sources */,
+				DD0000000000000000000002 /* Frameworks */,
+				DD0000000000000000000003 /* Resources */,
+				DD0000000000000000000004 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB0000000000000000000001 /* PBXTargetDependency */,
+			);
+			name = Neovimari;
+			productName = Neovimari;
+			productReference = BB0000000000000000000008 /* Neovimari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE0000000000000000000002 /* Neovimari Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0000000000000000000009 /* Build configuration list for PBXNativeTarget "Neovimari Extension" */;
+			buildPhases = (
+				DD0000000000000000000005 /* Sources */,
+				DD0000000000000000000006 /* Frameworks */,
+				DD0000000000000000000007 /* Resources */,
+				DD0000000000000000000008 /* Copy Dist Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Neovimari Extension";
+			productName = "Neovimari Extension";
+			productReference = BB0000000000000000000009 /* Neovimari Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					EE0000000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					EE0000000000000000000002 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = FF0000000000000000000007 /* Build configuration list for PBXProject "Neovimari" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA0000000000000000000002;
+			productRefGroup = AA0000000000000000000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE0000000000000000000001 /* Neovimari */,
+				EE0000000000000000000002 /* Neovimari Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD0000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0000000000000000000003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0000000000000000000007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DD0000000000000000000008 /* Copy Dist Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Dist Files";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "DIST_DIR=\"${SRCROOT}/../../dist\"\nRESOURCES_DIR=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\n\nif [ -d \"$DIST_DIR\" ]; then\n    mkdir -p \"$RESOURCES_DIR\"\n    cp -R \"$DIST_DIR/\" \"$RESOURCES_DIR/\"\n    echo \"Copied dist files to $RESOURCES_DIR\"\nelse\n    echo \"warning: dist directory not found at $DIST_DIR. Run npm run build first.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0000000000000000000001 /* NeovimariApp.swift in Sources */,
+				CC0000000000000000000002 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0000000000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0000000000000000000004 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB0000000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE0000000000000000000002 /* Neovimari Extension */;
+			targetProxy = AB0000000000000000000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FF0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB000000000000000000000B /* Local.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB000000000000000000000B /* Local.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FF0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Neovimari/Neovimari.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neovimari.Neovimari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FF0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Neovimari/Neovimari.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neovimari.Neovimari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FF0000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Neovimari Extension/Neovimari Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Neovimari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Neovimari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neovimari.Neovimari.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FF0000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Neovimari Extension/Neovimari Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Neovimari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Neovimari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neovimari.Neovimari.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF0000000000000000000007 /* Build configuration list for PBXProject "Neovimari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0000000000000000000001 /* Debug */,
+				FF0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0000000000000000000008 /* Build configuration list for PBXNativeTarget "Neovimari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0000000000000000000003 /* Debug */,
+				FF0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0000000000000000000009 /* Build configuration list for PBXNativeTarget "Neovimari Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0000000000000000000005 /* Debug */,
+				FF0000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0000000000000000000001 /* Project object */;
+}
