@@ -18,7 +18,13 @@ import {
   goToBottom,
 } from "./scroll";
 import { activateHints, type HintSession } from "./hints";
-import { activateSearch, searchNext, searchPrev, clearSearch, type SearchSession } from "./search";
+import {
+  activateSearch,
+  searchNext,
+  searchPrev,
+  clearSearch,
+  type SearchSession,
+} from "./search";
 import { updateModeIndicator } from "./ui/mode-indicator";
 
 let settings: Settings = DEFAULT_SETTINGS;
@@ -53,7 +59,7 @@ function getActions(): Record<ActionName, () => void> {
     },
     focusInput: () => {
       const input = document.querySelector<HTMLElement>(
-        'input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="file"]):not([type="image"]):not([disabled]), textarea:not([disabled]), [contenteditable="true"], [contenteditable=""]'
+        'input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="file"]):not([type="image"]):not([disabled]), textarea:not([disabled]), [contenteditable="true"], [contenteditable=""]',
       );
       if (input) {
         input.focus();
@@ -111,7 +117,14 @@ function handleKeyDown(e: KeyboardEvent): void {
   if (e.ctrlKey || e.altKey || e.metaKey) return;
 
   // Ignore modifier-only key presses
-  if (e.key === "Shift" || e.key === "Control" || e.key === "Alt" || e.key === "Meta" || e.key === "CapsLock") return;
+  if (
+    e.key === "Shift" ||
+    e.key === "Control" ||
+    e.key === "Alt" ||
+    e.key === "Meta" ||
+    e.key === "CapsLock"
+  )
+    return;
 
   const mode = modeManager.getMode();
 
@@ -176,7 +189,17 @@ function handleKeyDown(e: KeyboardEvent): void {
 
 function applySettings(newSettings: Settings): void {
   settings = newSettings;
-  resolver = new KeySequenceResolver(settings.keyMappings);
+
+  // Build key mappings excluding disabled actions
+  const disabledSet = new Set<ActionName>(settings.disabledActions);
+  const activeMappings = { ...settings.keyMappings };
+  for (const action of disabledSet) {
+    delete activeMappings[action];
+  }
+  resolver = new KeySequenceResolver(
+    activeMappings as Record<ActionName, string>,
+  );
+
   disabled = isUrlExcluded(window.location.href, settings.excludedUrls);
 }
 

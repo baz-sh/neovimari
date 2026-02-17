@@ -1,4 +1,4 @@
-import type { ActionName } from "./types";
+import { ACTION_NAMES, type ActionName } from "./types";
 
 export interface Settings {
   readonly scrollStepSize: number;
@@ -8,6 +8,7 @@ export interface Settings {
   readonly hintCharacters: string;
   readonly keyMappings: Readonly<Record<ActionName, string>>;
   readonly excludedUrls: readonly string[];
+  readonly disabledActions: readonly ActionName[];
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -44,6 +45,7 @@ export const DEFAULT_SETTINGS: Settings = {
     insertMode: "i",
   },
   excludedUrls: [],
+  disabledActions: [],
 };
 
 export function validateSettings(raw: unknown): Settings {
@@ -104,6 +106,13 @@ export function validateSettings(raw: unknown): Settings {
     ? obj.excludedUrls.filter((u): u is string => typeof u === "string")
     : [...DEFAULT_SETTINGS.excludedUrls];
 
+  const actionNameSet = new Set<string>(ACTION_NAMES);
+  const disabledActions = Array.isArray(obj.disabledActions)
+    ? (obj.disabledActions.filter(
+        (a): a is ActionName => typeof a === "string" && actionNameSet.has(a),
+      ) as ActionName[])
+    : [...DEFAULT_SETTINGS.disabledActions];
+
   return {
     scrollStepSize,
     halfPageScroll,
@@ -112,5 +121,6 @@ export function validateSettings(raw: unknown): Settings {
     hintCharacters,
     keyMappings,
     excludedUrls,
+    disabledActions,
   };
 }

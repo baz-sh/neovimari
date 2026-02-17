@@ -35,7 +35,9 @@ export class KeySequenceResolver {
 
   setMappings(keyMappings: Readonly<Record<ActionName, string>>): void {
     // Sort by sequence length descending so longer sequences match first
+    // Filter out empty strings (disabled actions may have empty key mappings)
     this.mappings = Object.entries(keyMappings)
+      .filter(([, seq]) => seq.length > 0)
       .map(([action, seq]) => [seq, action as ActionName] as const)
       .sort((a, b) => b[0].length - a[0].length);
     this.reset();
@@ -54,9 +56,7 @@ export class KeySequenceResolver {
     }
 
     // Check if buffer is a prefix of any mapping
-    const isPrefix = this.mappings.some(([seq]) =>
-      seq.startsWith(this.buffer),
-    );
+    const isPrefix = this.mappings.some(([seq]) => seq.startsWith(this.buffer));
 
     if (isPrefix) {
       this.startTimer();
@@ -90,9 +90,7 @@ export class KeySequenceResolver {
     }
 
     // Check if lastKey is a prefix
-    const lastIsPrefix = this.mappings.some(([seq]) =>
-      seq.startsWith(lastKey),
-    );
+    const lastIsPrefix = this.mappings.some(([seq]) => seq.startsWith(lastKey));
     if (lastIsPrefix) {
       this.buffer = lastKey;
       this.startTimer();

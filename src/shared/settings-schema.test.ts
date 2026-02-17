@@ -1,8 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  validateSettings,
-  DEFAULT_SETTINGS,
-} from "./settings-schema";
+import { validateSettings, DEFAULT_SETTINGS } from "./settings-schema";
 
 describe("validateSettings", () => {
   it("returns defaults for null input", () => {
@@ -74,5 +71,36 @@ describe("validateSettings", () => {
     expect(validateSettings({ hintCharacters: "" }).hintCharacters).toBe(
       DEFAULT_SETTINGS.hintCharacters,
     );
+  });
+
+  it("accepts valid disabledActions", () => {
+    const result = validateSettings({
+      disabledActions: ["scrollDown", "scrollUp"],
+    });
+    expect(result.disabledActions).toEqual(["scrollDown", "scrollUp"]);
+  });
+
+  it("filters invalid action names from disabledActions", () => {
+    const result = validateSettings({
+      disabledActions: ["scrollDown", "notAnAction", 42, null, "scrollUp"],
+    });
+    expect(result.disabledActions).toEqual(["scrollDown", "scrollUp"]);
+  });
+
+  it("returns empty disabledActions for non-array input", () => {
+    expect(
+      validateSettings({ disabledActions: "scrollDown" }).disabledActions,
+    ).toEqual([]);
+    expect(validateSettings({ disabledActions: 42 }).disabledActions).toEqual(
+      [],
+    );
+    expect(validateSettings({ disabledActions: null }).disabledActions).toEqual(
+      [],
+    );
+  });
+
+  it("defaults disabledActions to empty array", () => {
+    const result = validateSettings({});
+    expect(result.disabledActions).toEqual([]);
   });
 });

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neovimari Settings</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1>Neovimari</h1>
+        <span class="version">v0.1.0</span>
+      </header>
+      <div id="groups"></div>
+      <section class="section">
+        <div class="section-header" data-section="general">
+          <span class="chevron">&#9656;</span>
+          <span class="section-title">General Settings</span>
+        </div>
+        <div class="section-body" data-section-body="general" hidden>
+          <div class="setting-row">
+            <label for="scrollStepSize">Scroll step (px)</label>
+            <input type="number" id="scrollStepSize" min="1" max="1000" />
+          </div>
+          <div class="setting-row">
+            <label for="halfPageScroll">Half page fraction</label>
+            <input
+              type="number"
+              id="halfPageScroll"
+              min="0.1"
+              max="1"
+              step="0.1"
+            />
+          </div>
+          <div class="setting-row">
+            <label for="smoothScroll">Smooth scroll</label>
+            <input type="checkbox" id="smoothScroll" />
+          </div>
+          <div class="setting-row">
+            <label for="smoothScrollDuration">Scroll duration (ms)</label>
+            <input type="number" id="smoothScrollDuration" min="0" max="2000" />
+          </div>
+          <div class="setting-row">
+            <label for="hintCharacters">Hint characters</label>
+            <input type="text" id="hintCharacters" />
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-header" data-section="urls">
+          <span class="chevron">&#9656;</span>
+          <span class="section-title">Excluded URLs</span>
+        </div>
+        <div class="section-body" data-section-body="urls" hidden>
+          <div id="excludedUrlsList"></div>
+          <div class="add-url-row">
+            <input type="text" id="newUrlPattern" placeholder="*example.com*" />
+            <button id="addUrlBtn" class="btn-add">Add</button>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <button id="resetBtn" class="btn-reset">Reset to Defaults</button>
+      </footer>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
