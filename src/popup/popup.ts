@@ -10,6 +10,9 @@ import type { SettingsResponse } from "../shared/messages";
 
 let settings: Settings = { ...DEFAULT_SETTINGS };
 
+// Track which groups are expanded (persists across re-renders)
+const expandedGroups = new Set<string>();
+
 // Track which key badge is currently being edited
 let editingAction: ActionName | null = null;
 let editingBuffer = "";
@@ -234,7 +237,12 @@ function renderGroups(): void {
     // Group body (individual actions)
     const body = document.createElement("div");
     body.className = "section-body";
-    body.hidden = true;
+
+    const isExpanded = expandedGroups.has(groupName);
+    body.hidden = !isExpanded;
+    if (isExpanded) {
+      header.classList.add("open");
+    }
 
     for (const action of actions) {
       const row = document.createElement("div");
@@ -277,6 +285,11 @@ function renderGroups(): void {
       if ((e.target as HTMLElement).closest(".toggle")) return;
       body.hidden = !body.hidden;
       header.classList.toggle("open", !body.hidden);
+      if (!body.hidden) {
+        expandedGroups.add(groupName);
+      } else {
+        expandedGroups.delete(groupName);
+      }
     });
 
     section.appendChild(header);

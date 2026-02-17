@@ -67,8 +67,7 @@
 
 body {
   width: 360px;
-  height: 520px;
-  overflow-y: auto;
+  overflow: hidden;
   font-family:
     -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
     sans-serif;
@@ -76,6 +75,13 @@ body {
   line-height: 1.4;
   color: var(--text);
   background: var(--bg);
+}
+
+#app {
+  max-height: 520px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px;
 }
 
 #app {
@@ -429,19 +435,19 @@ body {
 }
 
 /* --- Scrollbar --- */
-body::-webkit-scrollbar {
+#app::-webkit-scrollbar {
   width: 6px;
 }
 
-body::-webkit-scrollbar-track {
+#app::-webkit-scrollbar-track {
   background: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+#app::-webkit-scrollbar-thumb {
   background: var(--scrollbar);
   border-radius: 3px;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+#app::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-hover);
 }
