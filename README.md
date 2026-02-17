@@ -13,21 +13,35 @@ A Safari Web Extension that brings Vim keybindings to your browser — scroll, n
 
 ## Keybindings
 
-| Key | Action |
-|-----|--------|
-| `h` `j` `k` `l` | Scroll left / down / up / right |
-| `d` / `u` | Half-page down / up |
-| `gg` / `G` | Top / bottom of page |
-| `f` / `F` | Link hints (current tab / new tab) |
-| `/` | Search page |
-| `n` / `N` | Next / previous search match |
-| `H` / `L` | History back / forward |
-| `J` / `K` | Previous / next tab |
-| `r` | Reload page |
-| `x` / `X` | Close tab / restore closed tab |
-| `t` / `T` | New tab / duplicate tab |
-| `i` | Enter insert mode (pass keys to page) |
-| `Escape` | Return to normal mode |
+| Key             | Action                                |
+| --------------- | ------------------------------------- |
+| `h` `j` `k` `l` | Scroll left / down / up / right       |
+| `d` / `u`       | Half-page down / up                   |
+| `gg` / `G`      | Top / bottom of page                  |
+| `f` / `F`       | Link hints (current tab / new tab)    |
+| `/`             | Search page                           |
+| `n` / `N`       | Next / previous search match          |
+| `H` / `L`       | History back / forward                |
+| `J` / `K`       | Previous / next tab                   |
+| `r`             | Reload page                           |
+| `x` / `X`       | Close tab / restore closed tab        |
+| `t` / `T`       | New tab / duplicate tab               |
+| `i`             | Enter insert mode (pass keys to page) |
+| `Escape`        | Return to normal mode                 |
+
+All keybindings are fully configurable and can be individually enabled/disabled via the settings popup.
+
+## Settings
+
+Click the Neovimari icon in the Safari toolbar to open the settings popup.
+
+- **Enable/disable actions** — toggle individual actions or entire groups (Scrolling, Navigation, Search, Tabs, History, Other)
+- **Remap keybindings** — click any key badge and press the new key sequence
+- **General settings** — scroll step size, smooth scroll, half-page fraction, scroll duration, hint characters
+- **Excluded URLs** — add glob patterns (e.g. `*mail.google.com*`) to disable Neovimari on specific sites
+- **Reset to defaults** — restore all settings to their original values
+
+The popup automatically adapts to your system light/dark mode.
 
 ## Setup
 
@@ -72,6 +86,7 @@ After rebuilding, hit Cmd+R in Xcode and reload the page in Safari.
 
 - **Content script** — injected into every page; captures keyboard input, manages modal state, renders link hints and search UI via Shadow DOM
 - **Background service worker** — handles tab management and persists settings via `browser.storage.local`
+- **Popup** — settings UI for configuring keybindings, toggling actions, and managing excluded URLs
 - **Swift companion app** — minimal macOS wrapper required by Apple to host the Safari Web Extension
 
 ## Inspired by
