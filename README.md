@@ -26,6 +26,7 @@ A Safari Web Extension that brings Vim keybindings to your browser — scroll, n
 | `r`             | Reload page                           |
 | `x` / `X`       | Close tab / restore closed tab        |
 | `t` / `T`       | New tab / duplicate tab               |
+| `gi`            | Focus first input                     |
 | `i`             | Enter insert mode (pass keys to page) |
 | `Escape`        | Return to normal mode                 |
 
